@@ -1,58 +1,41 @@
-'use client'
 import Image from "next/image";
-import { Cog6ToothIcon, ChatBubbleLeftRightIcon} from '@heroicons/react/24/outline';
-import { XMarkIcon, HeartIcon, InformationCircleIcon} from '@heroicons/react/24/solid';
+import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import TincarLogo from "./ui/tincar-logo";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="tbg mx-auto my-0 mt-3 bg-white border border-gray-400">
-        <div className="theader flex justify-between bg-gray-200 border-b border-gray-400">
-          <div className="flex items-center text-gray-500 text-center px-5">
-            <Cog6ToothIcon className="w-8 h-8" />
-          </div>
-          <div className="flex items-center text-center">
-            <div className="tlogo w-full relative mx-0 my-auto p-2">
-              <p className="font-bold text-red-500 text-2xl">TinCar </p>
-            </div>
-          </div>
-          <div className="flex items-center text-gray-500 text-center px-5">
-            <ChatBubbleLeftRightIcon className="w-8 h-8"/>
-          </div>
+    <main className="flex min-h-screen flex-col p-6">
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-red-400 p-4 md:h-52">
+         <TincarLogo /> 
+      </div>
+      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+        <div/>
+          <p className="text-xl text-gray-800 md:text-3xl md:leading-normal">
+            <strong>Bienvenido a Tincar.</strong> El lugar donde encontrar tu proximo vehiculo.
+          </p>
+          <Link
+            href="/main"
+            className="flex items-center gap-5 self-start rounded-lg bg-red-400 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-300 md:text-base"
+          >
+            <span>Ingresar</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link>
         </div>
-        <div className="p-3 flex flex-col items-center">
-          <div className="tphoto rounded-lg border border-gray-400 shadow-lg">
-            <Image
-              className="w-full user-image"
-              src="/images/fiat-147.jpeg" 
-              alt="photo tincar"
-              priority
-              width={355}
-              height={500}
-            />
-      
-            <div className="flex justify-between">
-              <div className="text-xl text-slate-600 float-left p-4">Fiat 147, <span className="font-light">1998</span></div>
-              <div className="tinfo text-lg float-right text-gray-500 p-4">
-                <div className="pl-4 text-gray-400">
-                  <span>A 3 km</span>
-                </div>
-              </div>
-          </div>
-          </div>
-          <div className="flex items-center justify-center w-full h-full pt-6">
-            <div className="bg-white rounded-full relative text-6xl tno p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" color="#ff695b" fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="size-14">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <div className="ti rounded-full relative px-0.5 pt-0.5">
-              <InformationCircleIcon className="w-6 h-6" color="#398beb"/>
-            </div>
-            <div className="bg-white rounded-full relative text-6xl tyes p-6">
-              <HeartIcon className="size-14" color="#5de19c"/>
-            </div>
-          </div>
+        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+          <Image
+            src="/hero-desktop.png"
+            width={1000}
+            height={760}
+            className='hidden md:block'
+            alt="Screenshots of the dashboard project showing desktop version" />
+
+          <Image
+            src="/hero-mobile.png"
+            width={560}
+            height={620}
+            className='block md:hidden'
+            alt="Screenshots of the dashboard project showing desktop version" />
         </div>
       </div>
     </main>
