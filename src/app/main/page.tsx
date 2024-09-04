@@ -4,8 +4,8 @@ import { HeartIcon, InformationCircleIcon} from '@heroicons/react/24/solid';;
 
 export default function Page() {
     return(
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="tbg mx-auto my-0 mt-3 bg-white border border-gray-400">
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <div className="tbg bg-white border border-gray-400">
         <div className="theader flex justify-between bg-gray-200 border-b border-gray-400">
           <div className="flex items-center text-gray-500 text-center px-5">
             <Cog6ToothIcon className="w-8 h-8" />
